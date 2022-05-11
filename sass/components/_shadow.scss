@@ -1,0 +1,7 @@
+$shadow-light: rgba(0, 0, 0, 0.55);
+$shadow-dark: rgba(0, 0, 0, 0.50);
+
+@mixin custom-shadow {
+  box-shadow: 0 14px 28px $shadow-light, 0 10px 10px $shadow-dark;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}

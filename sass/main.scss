@@ -1,19 +1,21 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@use './' as *;
 
-body{
-  background: #312E2B;
-}
+@include resetter;
 
-.container {
+body {
+  background: $page-color;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+}
+
+.container {
+  border: 1rem solid $chess-border;
+  display: flex;
+  width: min-content;
   flex-direction: column;
+  @include custom-shadow
 }
 
 .row-1 {
@@ -22,11 +24,11 @@ body{
   justify-content: flex-start;
 
   & > :nth-child(even) {
-    background: darkgreen;
+    background: $block-dark;
   }
 
   & > :nth-child(odd) {
-    background: beige;
+    background: $block-light;
   }
 }
 
@@ -36,16 +38,15 @@ body{
   justify-content: flex-start;
 
   & > :nth-child(even) {
-    background: beige;
+    background: $block-light;
   }
 
   & > :nth-child(odd) {
-    background: darkgreen;
+    background: $block-dark;
   }
 }
 
 .cell {
   width: 60px;
   height: 60px;
-  border: 1px solid black;
 }
