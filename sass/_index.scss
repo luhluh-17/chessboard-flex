@@ -1,5 +1,7 @@
-@forward './abstracts/colors';
+@forward "./abstracts/breakpoints";
+@forward "./abstracts/colors";
+@forward "./abstracts/mixins";
 
-@forward './components/shadow';
+@forward "./components/shadow";
 
-@forward './core/reset';
+@forward "./core/reset";

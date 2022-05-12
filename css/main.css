@@ -46,14 +46,26 @@ body {
 }
 
 .cell {
-  width: 60px;
   height: 60px;
+  width: 60px;
 }
 
-.chess-piece {
-  color: white;
-  width: 50px;
-  height: 40px;
+/* Smartphones */
+@media only screen and (max-width: 500px) {
+  .cell {
+    height: 40px;
+    width: 40px;
+  }
 }
+/* Tablet */
+@media (min-width: 501px) and (max-width: 768px) {
+  .cell {
+    height: 60px;
+    width: 60px;
+  }
+}
+/* Normal */
+/* Widescreen */
+/* Landscape */
 
 /*# sourceMappingURL=main.css.map */

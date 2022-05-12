@@ -15,44 +15,17 @@ body {
   display: flex;
   width: min-content;
   flex-direction: column;
-  @include custom-shadow
+  @include custom-shadow;
 }
 
 .row-1 {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-
-  & > :nth-child(even) {
-    background: $block-dark;
-  }
-
-  & > :nth-child(odd) {
-    background: $block-light;
-  }
+  @include block-color($block-dark, $block-light);
 }
 
 .row-2 {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-
-  & > :nth-child(even) {
-    background: $block-light;
-  }
-
-  & > :nth-child(odd) {
-    background: $block-dark;
-  }
+  @include block-color($block-light, $block-dark);
 }
 
-.cell {
-  width: 60px;
-  height: 60px;
-}
+@include block-size($cell-default);
 
-.chess-piece{
-  color: white;
-  width: 50px;
-  height: 40px;
-}
+@include media-query;
