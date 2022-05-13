@@ -1,8 +1,7 @@
 @forward './abstracts/colors';
 @forward './abstracts/mixins';
+@forward './abstracts/reset';
 
 @forward './components/breakpoints';
 @forward './components/shadow';
 @forward './components/animation';
-
-@forward './utils/reset';

@@ -1,23 +1,15 @@
-@use "sass:string";
-
 @mixin animate-piece($name, $delay, $duration: 0.1s) {
   animation: $name $duration linear $delay 1 forwards;
 }
 
-@mixin move-object(
-  $name,
-  $from-translate-x,
-  $from-translate-y,
-  $to-translate-x,
-  $to-translate-y
-) {
+@mixin move-object($name, $translate-x, $translate-y) {
   @keyframes #{$name} {
     from {
-      transform: translate($from-translate-x, $from-translate-y);
+      transform: translate(0, 0);
     }
 
     to {
-      transform: translate($to-translate-x, $to-translate-y);
+      transform: translate($translate-x, $translate-y);
     }
   }
 }
@@ -34,13 +26,13 @@
   }
 }
 
-@function calculate-move($cell-spacing, $moves) {
+@function calc-move($size, $moves) {
   $result: 0;
-  $result: ($cell-spacing * $moves);
+  $result: ($size * $moves);
   @return $result;
 }
 
-@mixin my-animation($cell-size) {
+@mixin my-animation($size) {
   #pawn-white-5 {
     @include animate-piece(e4, 1s);
   }
@@ -69,11 +61,11 @@
     @include animate-piece(x, 7s);
   }
 
-  @include move-object(e4, 0, 0, 0, calculate-move($cell-size, 2));
-  @include move-object(e5, 0, 0, 0, calculate-move($cell-size, -2));
-  @include move-object(Nc6, 0, 0, calculate-move($cell-size, -1), calculate-move($cell-size, -2));
-  @include move-object(Bc4, 0, 0, calculate-move($cell-size, 3), calculate-move($cell-size, 3));
-  @include move-object(d6, 0, 0, 0, calculate-move($cell-size, -1));
+  @include move-object(e4, 0, calc-move($size, 2));
+  @include move-object(e5, 0, calc-move($size, -2));
+  @include move-object(Nc6, calc-move($size, -1), calc-move($size, -2));
+  @include move-object(Bc4, calc-move($size, 3), calc-move($size, 3));
+  @include move-object(d6, 0, calc-move($size, -1));
   @include remove-object(x);
 
   @keyframes Qf3-Qxg7 {
@@ -82,15 +74,15 @@
     }
 
     5% {
-      transform: translate(calculate-move($cell-size, -2), calculate-move($cell-size, 2));
+      transform: translate(calc-move($size, -2), calc-move($size, 2));
     }
 
     95% {
-      transform: translate(calculate-move($cell-size, -2), calculate-move($cell-size, 2));
+      transform: translate(calc-move($size, -2), calc-move($size, 2));
     }
 
     100% {
-      transform: translate(calculate-move($cell-size, -2), calculate-move($cell-size, 6));
+      transform: translate(calc-move($size, -2), calc-move($size, 6));
     }
   }
 }
