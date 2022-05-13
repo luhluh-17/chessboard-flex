@@ -13,10 +13,6 @@ body {
   flex-direction: column;
 }
 
-object {
-  position: relative;
-}
-
 .container {
   border: 1rem solid #9c573b;
   display: flex;
