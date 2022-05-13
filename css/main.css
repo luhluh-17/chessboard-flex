@@ -1,3 +1,41 @@
+@keyframes first-move-white {
+  from {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  to {
+    top: 120px;
+    right: 60px;
+    bottom: 0;
+    left: 0;
+  }
+}
+@keyframes first-move-white2 {
+  from {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  to {
+    top: 0;
+    right: 60px;
+    bottom: 60px;
+    left: 0;
+  }
+}
+#pawn-white-4 {
+  position: relative;
+  animation: first-move-white 0.75s linear 2s 1 forwards;
+}
+
+#pawn-black-2 {
+  position: relative;
+  animation: first-move-white2 0.75s linear 3s 1 forwards;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,12 +49,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-
-.title {
-  color: white;
-  font-family: "Raleway", sans-serif;
-  margin: 4px;
 }
 
 .container {
@@ -53,8 +85,8 @@ body {
 }
 
 .cell {
-  height: 60px;
-  width: 60px;
+  height: 80px;
+  width: 80px;
 }
 
 /* Smartphones */

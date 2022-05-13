@@ -7,7 +7,8 @@ $widescreen-min: 1201px;
 
 $landscape-max: 500px;
 
-$cell-default: 60px;
+$cell-default: 80px;
+$cell-tablet: 60px;
 $cell-smartphone: 40px;
 
 @mixin block-size($size) {
@@ -25,7 +26,7 @@ $cell-smartphone: 40px;
 
   /* Tablet */
   @media (min-width: $tablet-min) and (max-width: $tablet-max) {
-    @include block-size($cell-default);
+    @include block-size($cell-tablet);
   }
 
   /* Normal */
