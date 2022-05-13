@@ -3,14 +3,10 @@
 $smartphone-max: 500px;
 $tablet-min: 501px;
 $tablet-max: 768px;
-$normal-min: 769px;
-$normal-max: 1200px;
-$widescreen-min: 1201px;
 
 $landscape-max: 500px;
 
-$cell-default: 80px;
-$cell-tablet: 60px;
+$cell-default: 60px;
 $cell-smartphone: 40px;
 
 @mixin block-size($size) {
@@ -25,23 +21,5 @@ $cell-smartphone: 40px;
   @media only screen and (max-width: $smartphone-max) {
     @include block-size($cell-smartphone);
     @include my-animation($cell-smartphone);
-  }
-
-  /* Tablet */
-  @media (min-width: $tablet-min) and (max-width: $tablet-max) {
-    @include block-size($cell-tablet);
-    @include my-animation($cell-tablet);
-  }
-
-  /* Normal */
-  @media (min-width: $normal-min) and (max-width: $normal-max) {
-  }
-
-  /* Widescreen */
-  @media (min-width: $widescreen-min) {
-  }
-
-  /* Landscape */
-  @media (max-height: $landscape-max) {
   }
 }
