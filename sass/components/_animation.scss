@@ -1,0 +1,96 @@
+@use "sass:string";
+
+@mixin animate-piece($name, $delay, $duration: 0.1s) {
+  animation: $name $duration linear $delay 1 forwards;
+}
+
+@mixin move-object(
+  $name,
+  $from-translate-x,
+  $from-translate-y,
+  $to-translate-x,
+  $to-translate-y
+) {
+  @keyframes #{$name} {
+    from {
+      transform: translate($from-translate-x, $from-translate-y);
+    }
+
+    to {
+      transform: translate($to-translate-x, $to-translate-y);
+    }
+  }
+}
+
+@mixin remove-object($name) {
+  @keyframes #{$name} {
+    from {
+      opacity: 100%;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+}
+
+@function calculate-move($cell-spacing, $moves) {
+  $result: 0;
+  $result: ($cell-spacing * $moves);
+  @return $result;
+}
+
+@mixin my-animation($cell-size) {
+  #pawn-white-5 {
+    @include animate-piece(e4, 1s);
+  }
+
+  #pawn-black-5 {
+    @include animate-piece(e5, 2s);
+  }
+
+  #queen-white-1 {
+    @include animate-piece(Qf3-Qxg7, 3s, 4s);
+  }
+
+  #knight-black-1 {
+    @include animate-piece(Nc6, 4s);
+  }
+
+  #bishop-white-2 {
+    @include animate-piece(Bc4, 5s);
+  }
+
+  #pawn-black-4 {
+    @include animate-piece(d6, 6s);
+  }
+
+  #pawn-black-6 {
+    @include animate-piece(x, 7s);
+  }
+
+  @include move-object(e4, 0, 0, 0, calculate-move($cell-size, 2));
+  @include move-object(e5, 0, 0, 0, calculate-move($cell-size, -2));
+  @include move-object(Nc6, 0, 0, calculate-move($cell-size, -1), calculate-move($cell-size, -2));
+  @include move-object(Bc4, 0, 0, calculate-move($cell-size, 3), calculate-move($cell-size, 3));
+  @include move-object(d6, 0, 0, 0, calculate-move($cell-size, -1));
+  @include remove-object(x);
+
+  @keyframes Qf3-Qxg7 {
+    0% {
+      transform: translate(0, 0);
+    }
+
+    5% {
+      transform: translate(calculate-move($cell-size, -2), calculate-move($cell-size, 2));
+    }
+
+    95% {
+      transform: translate(calculate-move($cell-size, -2), calculate-move($cell-size, 2));
+    }
+
+    100% {
+      transform: translate(calculate-move($cell-size, -2), calculate-move($cell-size, 6));
+    }
+  }
+}

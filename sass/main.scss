@@ -11,6 +11,10 @@ body {
   flex-direction: column;
 }
 
+object {
+  position: relative;
+}
+
 .container {
   border: 1rem solid $chess-border;
   display: flex;
@@ -28,5 +32,7 @@ body {
 }
 
 @include block-size($cell-default);
+
+@include my-animation($cell-default);
 
 @include media-query;
