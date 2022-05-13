@@ -10,7 +10,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 
 .container {
@@ -24,8 +23,6 @@ body {
 
 .row-1 {
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
 }
 .row-1 > :nth-child(even) {
   background: #769656;
@@ -36,8 +33,6 @@ body {
 
 .row-2 {
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
 }
 .row-2 > :nth-child(even) {
   background: #eeeed2;

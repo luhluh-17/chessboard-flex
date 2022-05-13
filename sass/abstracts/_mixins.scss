@@ -1,7 +1,5 @@
 @mixin block-color($light, $dark) {
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
   & > :nth-child(even) {
     background: $light;
   }
