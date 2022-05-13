@@ -1,3 +1,5 @@
+@use 'animation' as *;
+
 $smartphone-max: 500px;
 $tablet-min: 501px;
 $tablet-max: 768px;
@@ -22,11 +24,13 @@ $cell-smartphone: 40px;
   /* Smartphones */
   @media only screen and (max-width: $smartphone-max) {
     @include block-size($cell-smartphone);
+    @include my-animation($cell-smartphone);
   }
 
   /* Tablet */
   @media (min-width: $tablet-min) and (max-width: $tablet-max) {
     @include block-size($cell-tablet);
+    @include my-animation($cell-tablet);
   }
 
   /* Normal */
