@@ -61,6 +61,10 @@
     @include animate-piece(x, 7s);
   }
 
+  #king-black-1 {
+    @include animate-piece(check, 7s);
+  }
+
   @include move-object(e4, 0, calc-move($size, 2));
   @include move-object(e5, 0, calc-move($size, -2));
   @include move-object(Nc6, calc-move($size, -1), calc-move($size, -2));
@@ -83,6 +87,13 @@
 
     100% {
       transform: translate(calc-move($size, -2), calc-move($size, 6));
+    }
+  }
+
+  @keyframes check {
+    to {
+      height: max-content;
+      background: #f6685e;
     }
   }
 }
