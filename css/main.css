@@ -147,7 +147,7 @@ body {
 }
 @keyframes check {
   to {
-    height: max-content;
+    height: 60px;
     background: #f6685e;
   }
 }
@@ -254,7 +254,7 @@ body {
   }
   @keyframes check {
     to {
-      height: max-content;
+      height: 40px;
       background: #f6685e;
     }
   }

@@ -92,7 +92,7 @@
 
   @keyframes check {
     to {
-      height: max-content;
+      height: $size;
       background: #f6685e;
     }
   }
