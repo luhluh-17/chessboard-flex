@@ -1,11 +1,11 @@
-@use './' as *;
+@use "../sass/" as *;
 
 @include resetter;
 
 body {
   background: $page-color;
-  height: 100vh;
   display: flex;
+  margin: 2.5rem 0;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -14,17 +14,17 @@ body {
 .container {
   border: 1rem solid $chess-border;
   display: flex;
-  width: min-content;
   flex-direction: column;
   @include custom-shadow;
-}
 
-.row-1 {
-  @include block-color($block-dark, $block-light);
-}
+  & > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.row-2 {
-  @include block-color($block-light, $block-dark);
+    @include block-color(odd);
+    @include block-color(even);
+  }
 }
 
 @include block-size($cell-default);

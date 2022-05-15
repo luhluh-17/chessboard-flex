@@ -6,8 +6,8 @@
 
 body {
   background: #312e2b;
-  height: 100vh;
   display: flex;
+  margin: 2.5rem 0;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -16,34 +16,26 @@ body {
 .container {
   border: 1rem solid #9c573b;
   display: flex;
-  width: min-content;
   flex-direction: column;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.55), 0 10px 10px rgba(0, 0, 0, 0.5);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-
-.row-1 {
+.container > div {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.row-1 > :nth-child(even) {
-  background: #769656;
-}
-.row-1 > :nth-child(odd) {
+.container > div:nth-child(odd) > :nth-child(odd) {
   background: #eeeed2;
 }
-
-.row-2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.row-2 > :nth-child(even) {
-  background: #eeeed2;
-}
-.row-2 > :nth-child(odd) {
+.container > div:nth-child(odd) > :nth-child(even) {
   background: #769656;
+}
+.container > div:nth-child(even) > :nth-child(odd) {
+  background: #769656;
+}
+.container > div:nth-child(even) > :nth-child(even) {
+  background: #eeeed2;
 }
 
 .cell {
